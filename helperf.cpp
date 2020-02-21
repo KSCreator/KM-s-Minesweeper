@@ -124,7 +124,7 @@ void ResetGame(short *map,short *data)
 
 void ReadGameData(short &win,short &lose)
 {
-    FILE *f = fopen("Resource\\statics.dat","rb");
+    FILE *f = fopen("Resource\\statics.dat","r");
     if(f){
         fscanf(f,"%hi%hi",&win,&lose);
         fclose(f);
@@ -135,7 +135,7 @@ void ReadGameData(short &win,short &lose)
 }
 
 void WriteGameData(short win,short lose){
-    FILE *f = fopen("Resource\\statics.dat","wb");
+    FILE *f = fopen("Resource\\statics.dat","w");
     if(f){
         fprintf(f,"%hi %hi",win,lose);
         fclose(f);
